@@ -5,8 +5,26 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import openpyxl
 
+"""
+This script reads headache data from Excel files and generates various statistics.
+
+The script performs the following functions:
+1. Reads data from multiple Excel files and aggregates it into a list of dictionaries.
+2. Calculates the number of headaches per month.
+3. Plots a number of medications used per month.
+"""
+
 
 def read_headache_data(file_paths):
+    """
+    Reads headache data from a list of Excel file paths and aggregates it.
+
+    Args:
+        file_paths (list of str): List of file paths to Excel files containing headache data.
+
+    Returns:
+        list of tuples: Each tuple contains the observation date, pain description, and a dictionary of medications with their usage.
+    """
     aggregated_data = []
 
     for file_path in file_paths:
@@ -45,6 +63,12 @@ def read_headache_data(file_paths):
 
 
 def plot_monthly_headache_trends(aggregated_data):
+    """
+    Plots the number of headaches per month based on the aggregated data.
+
+    Args:
+        aggregated_data (list of tuples): Aggregated headache data including observation date and pain description.
+    """
     # Initialize a dictionary to count headaches per (year, month)
     month_counts = defaultdict(int)
 
@@ -72,6 +96,12 @@ def plot_monthly_headache_trends(aggregated_data):
 
 
 def plot_medication_usage(aggregated_data):
+    """
+    Plots the usage trends of medications over time based on the aggregated data.
+
+    Args:
+        aggregated_data (list of tuples): Aggregated headache data including observation date and medications.
+    """
     # Dictionary to store medication usage per (year-month)
     medication_usage = defaultdict(lambda: defaultdict(float))
 

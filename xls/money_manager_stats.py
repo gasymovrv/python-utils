@@ -118,16 +118,19 @@ def plot_financial_summary(monthly_data: pd.DataFrame) -> None:
     plt.show()
 
 
-data = aggregate_financial_data("D:\\GoogleDisk\\Money-management\\xls-backups\\2025_04_12\\Главный_RUB_20250412_131419.xlsx")
-plot_financial_summary(data)
+# All
+# data = aggregate_financial_data("D:\\GoogleDisk\\Money-management\\xls-backups\\2025_04_12\\Главный_RUB_20250412_131419.xlsx")
+# plot_financial_summary(data)
 
+# Investment excluded
 # data = aggregate_financial_data(
-#     "D:\\GoogleDisk\\Money-management\\xls-backups\\2025_04_12\\Главный_RUB_20250412_131419.xlsx",
+#     "D:\\GoogleDisk\\Money-management\\xls-backups\\2025_05_08\\Главный_RUB_20250508_183425.xlsx",
 #     exclude_income_cols=["Инвестиции"],
 #     exclude_expense_cols=["Инвестиции"]
 # )
 # plot_financial_summary(data)
 
+# Only Investment
 # data = aggregate_financial_data(
 #     "D:\\GoogleDisk\\Money-management\\xls-backups\\2025_04_12\\Главный_RUB_20250412_131419.xlsx",
 #     exclude_income_cols=[
